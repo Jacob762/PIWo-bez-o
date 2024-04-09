@@ -169,12 +169,17 @@ body{
     row-gap: 20px;
 }
 
-/* trzeba przerobic wyswietlanie sie elementow, w tym guzika na dol po prawej */
+.bold-text {
+    font-weight: bold;
+}
+
 
 .hero-image-container{
     border-radius: var(--radius-large);
     grid-column: 1/7;
     display: flex;
+    justify-content:  flex-end; 
+    align-items: flex-end;
     flex-direction: column;
     background-image: url(./Assets/hero.jpg);
     background-repeat: no-repeat;
@@ -340,6 +345,91 @@ body{
 
 .hidden{
     display: none;
+}
+
+.heart-button {
+    background-color: var(--white);
+    padding: 8px 16px;
+    width: 38%;
+    border-radius: var(--radius-small);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.modal {
+    width: 80%;
+    height: 70%;
+    position: fixed;
+    padding: 2rem;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background: white;
+    border-radius: var(--radius-small);
+    z-index: 10;
+}
+
+textarea.input-modal {
+    width: 100%; /* Set the width of the input box */
+    height: 60%; /* Set the height of the input box */
+    padding: 10px; /* Add padding inside the input box */
+    font-size: 16px; /* Set the font size of the text */
+    resize: none; /* Disable resizing of the input box */
+    overflow-y: auto; /* Allow vertical scrolling for overflowing text */
+    border: 1px solid #ccc; /* Set border for the input box */
+    box-sizing: border-box;
+    border-radius: var(--radius-small);
+    font-family: "Roboto Flex", sans-serif;
+}
+
+.card-modal {
+    width: 100%;
+    border-radius: var(--radius-small);
+    display: flex;
+    justify-content:  flex-end; 
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 1rem;
+    gap: 20px;
+}
+
+.send-button-modal {
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    padding: 8px 24px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+    background-color: var(--primary-light);
+    border-radius: var(--radius-medium);
+}
+
+.cancel-button-modal {
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    padding: 8px 24px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+    background-color: white;
+    border-radius: var(--radius-medium);
+}
+
+.modal-title {
+    padding-bottom: 2rem;
 }
 
 @media screen and (max-width:768px) {

@@ -28,19 +28,33 @@
         <p class="title-large">Serene retreat</p>
     </section>
     <section id="hero" class="grid hero-section">
-        <div class="hero-image-container"><button class="chip">♡</button></div>
+        <div class="hero-image-container"><button class="heart-button">Add to favourties ♡</button></div> 
         <article class="hero-details">
-            <p class="copy-small"><b>Location:</b> Madrid </p>
-            <p class="copy-small"><b>Local category:</b> ★★★★☆ </p>
-            <p class="copy-small"><b>Price: </b>70€/room/night </p>
-            <p class="copy-small"><b>Description:</b> </p>
+            <p class="copy-small"><span class="bold-text">Location:</span> Madrid </p>
+            <p class="copy-small"><span class="bold-text">Local category:</span> ★★★★☆ </p>
+            <p class="copy-small"><span class="bold-text">Price: </span> 70€/room/night </p>
+            <p class="copy-small"><span class="bold-text">Description:</span>  </p>
             <p class="copy-small">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum veniam totam repellat accusantium, velit tempore minima quam enim deserunt dolor, sapiente vero amet in obcaecati quos itaque repudiandae consectetur provident.
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero voluptate eius eaque, ex quibusdam exercitationem porro nobis? Vitae, cum adipisci tempore eaque necessitatibus harum rerum eum, ipsum earum iure et!
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos tenetur ducimus consequatur natus deserunt suscipit esse praesentium fuga dolorum perspiciatis optio quasi reiciendis eveniet repellendus, reprehenderit aspernatur pariatur cum eos.
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque sit molestiae maiores consequuntur provident corrupti aspernatur voluptate fuga quidem omnis, culpa ipsam libero reiciendis odio beatae adipisci optio eius consequatur.
             </p>
-            <button class="contact-button">Contact </button>
+            <button open-modal class="contact-button">Contact </button>
+
+            <dialog contact-modal class="modal">
+                <div class="modal-title">
+                    <p class="title-large">Contact</p>
+                    <p class="copy-small">You're contacting the [hotel name] hotel</p>
+                </div>
+                <textarea class="input-modal" placeholder="Enter text here"></textarea>
+                <div class="card-modal">
+                    <button data-close-modal class="cancel-button-modal">Cancel</button>
+                    <button class="send-button-modal">Send</button>
+                </div>
+                
+            </dialog>
+
             <div class="hero-cards">
                 <div class="card-image">
                 </div>
@@ -50,5 +64,20 @@
         </article>
         
     </section>
+
+    <script>
+        const openButton = document.querySelector("[open-modal]")
+        const closeButton = document.querySelector("[data-close-modal]")
+        const modal = document.querySelector("[contact-modal]")
+
+        openButton.addEventListener("click", () => {
+            modal.showModal()
+        })
+
+        closeButton.addEventListener("click", () => {
+            modal.close()
+        })
+    </script>
+
 </body>
 </html>
